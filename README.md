@@ -1,5 +1,14 @@
 ## Jets Project
 
-#### This project is about some of the Boeing Fleet
+## Week 2 project for Skill Distillery
 
-###### 
+###### Project Description
+This project //...
+
+###### Technologies used
+The following //...
+
+###### Lessons learned
+
+Learned //...
+

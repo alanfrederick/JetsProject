@@ -18,7 +18,7 @@ public abstract class Jet {
 
   // fly method
   public void fly() {
-//...
+    System.out.println("Lets get this bird in the air!");
   }
 
   public double getSpeedInMach(double mach, int mph) {

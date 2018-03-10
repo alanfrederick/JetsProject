@@ -3,13 +3,17 @@ import java.util.Scanner;
 public class JetsApplication {
 
   public static void main(String[] args) {
+
+
+    
+  }
+
+  public static void planeStatsMenu() {
     Scanner input = new Scanner(System.in);
     AirField airField = new AirField();
     Jet[] jets = airField.getJets();
-
     System.out.println("Select an available Jet to see its stats.");
-
-    // run through array
+    // run through array for fleet selection
     while (true) {
       for (int i = 0; i < jets.length; i++) {
         if (jets[i] != null) {
@@ -17,19 +21,14 @@ public class JetsApplication {
         }
       }
       // select jet with method, accounting for 0->1 for selections
-      int jetSelection = input.nextInt();
-      selectPlane(jetSelection - 1, jets);
-
+      int fleetSelection = input.nextInt();
+      selectPlane(fleetSelection - 1, jets);
     }
-    // jets[0].fly();
-    // jets[1].fly();
-    // jets[2].fly();
-    // jets[3].fly();
+
   }
 
   public static void selectPlane(int selection, Jet[] jetsArry) {
     jetsArry[selection].getPlaneStats();
   }
-  
- 
+
 }

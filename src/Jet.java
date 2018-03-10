@@ -9,9 +9,9 @@ public abstract class Jet {
 
   // no arg constructor
   public Jet() {
-    
+
   }
-  
+
   // Jet constructor
   public Jet(String model, double speed, int range, long price) {
     super();
@@ -23,9 +23,14 @@ public abstract class Jet {
 
   // fly method
   public void fly() {
-    System.out.println("Lets get this bird in the air!");
-    System.out.println("This plane is a " + model + ", with a max speed of " + speed + ", a range of " + range + " and a price of $" + price + "!");
-    
+    System.out.println("\u266C I believe I can fly \u266C\n\u266C I believe I can touch the sky \u266C");
+
+  }
+
+  public void getPlaneStats() {
+
+    System.out.println("This plane is a " + model + ", with a max speed of " + speed + ", a range of " + range
+        + " and a price of $" + price + "!");
   }
 
   public double getSpeedInMach(double mach, int mph) {

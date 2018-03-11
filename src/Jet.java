@@ -23,16 +23,25 @@ public abstract class Jet {
 
   // fly method
   public void fly() {
-    System.out.println("\u266C I believe I can fly \u266C\n\u266C I believe I can touch the sky \u266C");
+    System.out.println("\u266C I believe I can fly \u266C\n\u266C I believe I can touch the sky \u266C"
+        + "\nThere went " + model + " off in to the sunset.");
 
   }
 
   public void getPlaneStats() {
 
-    System.out.println("This plane is a " + model + ", with a max speed of " + speed + ", a range of " + range
-        + " and a price of $" + price + "!");
+    System.out.println("This plane is a " + model + ", with a max speed of " + speed + " miles per hour, a range of " + range
+        + " miles, and a price of $" + price + "!");
+  }
+  
+  public void getFastestSpeed() {
+
+    System.out.println("The fastest plane in the aiport currently is " + model + ", with a max speed of " + speed + "!");
+   
   }
 
+
+  
   public double getSpeedInMach(double mach, int mph) {
     // mach = miles per hour × 0.001303
     mach = mph * 0.001303;

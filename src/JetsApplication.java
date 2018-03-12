@@ -83,9 +83,9 @@ public class JetsApplication {
     Jet[] jets = airField.getJets();
     System.out.println("Please enter airplane information.");
     for (int i = 0; i < jets.length; i++) {
-
+      
     }
-    String addMake = input.next();
+    String addMake = input.nextLine();
     addPlane(addMake, jets);
 
   }
@@ -133,7 +133,7 @@ public class JetsApplication {
     jetsArry[selection].fly();
   }
 
-  public static void addPlane(String make, double speed, int range, long price, Jet[] jetsArry) {
-    jetsArry[make, speed, range, price].addJet();
+  public static void addPlane(String make, Jet[] jetsArry) {
+    jetsArry[make].addJet();
   }
 }

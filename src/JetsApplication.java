@@ -76,7 +76,8 @@ public class JetsApplication {
 
   }
 
-  // add a jet to array
+  // also doesnt work
+  /*
   public static void addJet() {
     Scanner input = new Scanner(System.in);
     AirField airField = new AirField();
@@ -89,7 +90,7 @@ public class JetsApplication {
     addPlane(addMake, jets);
 
   }
-
+*/
   // display stats of a selected aircraft
   public static void planeStatsMenu() {
     Scanner input = new Scanner(System.in);
@@ -133,7 +134,5 @@ public class JetsApplication {
     jetsArry[selection].fly();
   }
 
-  public static void addPlane(String make, Jet[] jetsArry) {
-    jetsArry[make].addJet();
-  }
+
 }

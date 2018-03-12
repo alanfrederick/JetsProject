@@ -32,13 +32,13 @@ public void addJet() {
         + "\nThere went " + model + " off in to the sunset.");
 
   }
-
+// display stats of selected plane
   public void getPlaneStats() {
 
     System.out.println("This plane is a " + model + ", with a max speed of " + speed + " miles per hour, a range of " + range
         + " miles, and a price of $" + price + "!");
   }
-  
+  // display fastest plane stats
   public void getFastestSpeed() {
 
     System.out.println("The fastest plane in the aiport currently is " + model + ", with a max speed of " + speed + "!");

@@ -45,7 +45,7 @@ public class JetsApplication {
         System.out.println("1. List available planes in the Airport.");
         System.out.println("2. Fly a Jet!");
         System.out.println("3. -BROKEN-Add a jet to the Aiport.-BROKEN-");
-        System.out.println("4.-BROKEN- Display the fastest jet in the Airport.-BROKEN-");
+        System.out.println("4. -BROKEN- Display the fastest jet in the Airport.-BROKEN-");
         System.out.println("5. -BROKEN-Diplay the jet with the furthest range.-BROKEN-");
         System.out.println("0. Exit the Skill Distillery Airport.");
         menuSelection = input.next();
@@ -78,19 +78,16 @@ public class JetsApplication {
 
   // also doesnt work
   /*
-  public static void addJet() {
-    Scanner input = new Scanner(System.in);
-    AirField airField = new AirField();
-    Jet[] jets = airField.getJets();
-    System.out.println("Please enter airplane information.");
-    for (int i = 0; i < jets.length; i++) {
-      
-    }
-    String addMake = input.nextLine();
-    addPlane(addMake, jets);
-
-  }
-*/
+   * public static void addJet() { Scanner input = new Scanner(System.in);
+   * AirField airField = new AirField(); Jet[] jets = airField.getJets();
+   * System.out.println("Please enter airplane information."); for (int i = 0; i <
+   * jets.length; i++) {
+   * 
+   * } String addMake = input.nextLine(); addPlane(addMake, jets);
+   * 
+   * }
+   */
+  
   // display stats of a selected aircraft
   public static void planeStatsMenu() {
     Scanner input = new Scanner(System.in);
@@ -133,6 +130,5 @@ public class JetsApplication {
   public static void selectPlaneToFly(int selection, Jet[] jetsArry) {
     jetsArry[selection].fly();
   }
-
 
 }

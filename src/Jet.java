@@ -46,7 +46,7 @@ public void addJet() {
   }
 
 
-  
+  //function to conver mph to mach...currently unused
   public double getSpeedInMach(double mach, int mph) {
     // mach = miles per hour × 0.001303
     mach = mph * 0.001303;

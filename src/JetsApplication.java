@@ -1,6 +1,4 @@
-import java.util.Arrays;
 import java.util.Scanner;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
 
 public class JetsApplication {
   // main calls main menu method which drives the program
@@ -31,12 +29,10 @@ public class JetsApplication {
         flyTheJets();
         mainMenu();
       } else if (menuSelection.equals("3")) {
-
+        // addJet();
       } else if (menuSelection.equals("4")) {
-        // broken
         // getFastestPlane();
       } else if (menuSelection.equals("5")) {
-        // broken
         // getFurthestRangePlane();
       }
 
@@ -59,8 +55,8 @@ public class JetsApplication {
   }
 
   // Struggled getting this logic to work (same for distance). The max value //
-  // double keeps getting reset on each array pass, so a value // isnt being
-  // created to compare with. I believe I'm close here, I've walked // through the
+  // double keeps getting reset on each array pass, so a value isnt being
+  // created to compare with. I believe I'm close here, I've walked through the
   // logic with the debugger but I'm not catching the hiccup here.
 
   public static void getFastestPlane() {
@@ -77,6 +73,20 @@ public class JetsApplication {
         System.out.println(maxValue2);
       }
     }
+
+  }
+
+  // add a jet to array
+  public static void addJet() {
+    Scanner input = new Scanner(System.in);
+    AirField airField = new AirField();
+    Jet[] jets = airField.getJets();
+    System.out.println("Please enter airplane information.");
+    for (int i = 0; i < jets.length; i++) {
+
+    }
+    String addMake = input.next();
+    addPlane(addMake, jets);
 
   }
 
@@ -123,4 +133,7 @@ public class JetsApplication {
     jetsArry[selection].fly();
   }
 
+  public static void addPlane(String make, double speed, int range, long price, Jet[] jetsArry) {
+    jetsArry[make, speed, range, price].addJet();
+  }
 }

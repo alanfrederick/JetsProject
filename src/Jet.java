@@ -21,9 +21,6 @@ public abstract class Jet {
     this.price = price;
   }
   
-public void addJet() {
-  System.out.println("Adding plane..");
-}
 
 
   // fly method

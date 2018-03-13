@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class JetsApplication {
+  private static AirField airField = new AirField();
+
   // main calls main menu method which drives the program
   public static void main(String[] args) {
     mainMenu();
@@ -9,14 +11,15 @@ public class JetsApplication {
   // main menu method, providing a menu and options for user
   public static void mainMenu() {
     Scanner input = new Scanner(System.in);
+
     System.out.println("/*****************************************/");
     System.out.println("  Welcome to the Skill Distillery Airport.\n     Please select a menu option below.");
     System.out.println("/*****************************************/");
     System.out.println("1. List available planes in the Airport.");
     System.out.println("2. Fly a Jet!");
-    System.out.println("3. -BROKEN-Add a jet to the Aiport.-BROKEN-");
-    System.out.println("4. -BROKEN-Display the fastest jet in the Airport.-BROKEN-");
-    System.out.println("5. -BROKEN-Diplay the jet with the furthest range.-BROKEN-");
+    System.out.println("3. Add a jet to the Aiport.");
+    System.out.println("4. Display the fastest jet in the Airport.");
+    System.out.println("5. Diplay the jet with the furthest range.");
     System.out.println("0. Exit the Skill Distillery Airport.");
     String menuSelection = input.next();
 
@@ -29,11 +32,30 @@ public class JetsApplication {
         flyTheJets();
         mainMenu();
       } else if (menuSelection.equals("3")) {
+        System.out.println("Enter a make for the aircraft:");
+        String model = input.next();
+        System.out.println("Enter speed:");
+        double speed = input.nextDouble();
+        System.out.println("Enter Range:");
+        int range = input.nextInt();
+        System.out.println("Price the aircraft:");
+        long price = input.nextLong();
+        Jet j = new JetImpl(model, speed, range, price);
+        airField.addJet(j);
+        mainMenu();
+
         // addJet();
       } else if (menuSelection.equals("4")) {
-        // getFastestPlane();
+        Jet tempJet = AirField.getFastestPlane();
+        System.out.println(tempJet.getModel() + " is the fastest Jet with a speed of " + tempJet.getSpeed());
+        mainMenu();
+
       } else if (menuSelection.equals("5")) {
-        // getFurthestRangePlane();
+        Jet tempJet = AirField.getLongestDistance();
+        System.out.println(tempJet.getModel() + " has a distance of " + tempJet.getRange()
+            + " which is the furtherst of the airplanes available.");
+        mainMenu();
+
       }
 
       else if (menuSelection.equals("0")) {
@@ -44,9 +66,9 @@ public class JetsApplication {
       } else {
         System.out.println("1. List available planes in the Airport.");
         System.out.println("2. Fly a Jet!");
-        System.out.println("3. -BROKEN-Add a jet to the Aiport.-BROKEN-");
-        System.out.println("4. -BROKEN- Display the fastest jet in the Airport.-BROKEN-");
-        System.out.println("5. -BROKEN-Diplay the jet with the furthest range.-BROKEN-");
+        System.out.println("3. Add a jet to the Aiport.");
+        System.out.println("4. Display the fastest jet in the Airport.");
+        System.out.println("5. Diplay the jet with the furthest range.");
         System.out.println("0. Exit the Skill Distillery Airport.");
         menuSelection = input.next();
       }
@@ -54,44 +76,9 @@ public class JetsApplication {
 
   }
 
-  // Struggled getting this logic to work (same for distance). The max value //
-  // double keeps getting reset on each array pass, so a value isnt being
-  // created to compare with. I believe I'm close here, I've walked through the
-  // logic with the debugger but I'm not catching the hiccup here.
-
-  public static void getFastestPlane() {
-    AirField airField = new AirField();
-    Jet[] jets = airField.getJets();
-
-    for (int i = 0; i < jets.length; i++) {
-      if (jets[i] != null) {
-        double maxValue = jets[i].getSpeed();
-        double maxValue2 = 0;
-        if (maxValue2 < maxValue) {
-          maxValue2 = maxValue;
-        }
-        System.out.println(maxValue2);
-      }
-    }
-
-  }
-
-  // also doesnt work
-  /*
-   * public static void addJet() { Scanner input = new Scanner(System.in);
-   * AirField airField = new AirField(); Jet[] jets = airField.getJets();
-   * System.out.println("Please enter airplane information."); for (int i = 0; i <
-   * jets.length; i++) {
-   * 
-   * } String addMake = input.nextLine(); addPlane(addMake, jets);
-   * 
-   * }
-   */
-  
   // display stats of a selected aircraft
   public static void planeStatsMenu() {
     Scanner input = new Scanner(System.in);
-    AirField airField = new AirField();
     Jet[] jets = airField.getJets();
     System.out.println("Select an available Jet to see its stats.");
     // run through array for fleet selection
@@ -109,7 +96,6 @@ public class JetsApplication {
   // fly the jets method
   public static void flyTheJets() {
     Scanner input = new Scanner(System.in);
-    AirField airField = new AirField();
     Jet[] jets = airField.getJets();
     System.out.println("Select an available Jet to see it fly!");
     for (int i = 0; i < jets.length; i++) {
